@@ -1,0 +1,19 @@
+{
+    "name": "topthink/think-firebird",
+    "description": "Firebird driver for thinkphp5",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "weianguo",
+            "email": "366958903@qq.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "think\\firebird\\": "src"
+        },
+        "files": [
+        ]
+    }
+}
