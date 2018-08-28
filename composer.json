@@ -9,9 +9,6 @@
             "email": "366958903@qq.com"
         }
     ],
-    "require": {
-        "topthink/framework":"5.1.*"
-    },
     "autoload": {
         "psr-4": {
             "think\\firebird\\": "src"
