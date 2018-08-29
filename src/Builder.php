@@ -10,22 +10,23 @@
 namespace think\firebird;
 
 use think\db\Builder as BaseBuilder;
+use think\db\Query;
 
 /**
  * Firebird数据库驱动
  */
 class Builder extends BaseBuilder
 {
-
     protected $selectSql = 'SELECT %LIMIT% %DISTINCT% %FIELD% FROM %TABLE%%FORCE%%JOIN%%WHERE%%GROUP%%HAVING%%ORDER% %UNION%%LOCK%%COMMENT%';
-	
+
     /**
-     * limit分析
+     * limit
      * @access protected
-     * @param mixed $limit
+     * @param  Query     $query        查询对象
+     * @param  mixed     $limit
      * @return string
      */
-    public function parseLimit($limit)
+    protected function parseLimit(Query $query, $limit)
     {
         $limitStr = '';
         if (!empty($limit)) {
@@ -37,16 +38,6 @@ class Builder extends BaseBuilder
             }
         }
         return $limitStr;
-    }
-	
-    /**
-     * 随机排序
-     * @access protected
-     * @return string
-     */
-    protected function parseRand()
-    {
-        return 'rand()';
     }
 
 }
